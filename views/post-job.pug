@@ -1,0 +1,24 @@
+extends master.pug
+
+block content
+  h1 New Job
+  if error
+    p.error Can't post job. Please fill all fields.
+  form(name="job-posting-form" method="POST" action="/post-job")
+    .form-group
+      label Job title
+      input(type="text" name="title")
+
+    .form-group
+      label Company name
+      input(type="text" name="company_name")
+
+    .form-group
+      label Description
+      textarea(name="description")
+
+    .form-group
+      label Apply link
+      input(type="text" name="apply_link")
+
+    input(type="submit" value="Post now!")

@@ -1,0 +1,15 @@
+extends master.pug
+block content
+  h1 Jobs for developer
+  .post-job-link
+    a(href="/post-job") Post job
+
+  .job-list
+    each job in jobs
+      .job-item
+        a(href="/details/" + job.id)
+          .company-name= job.company_name
+          .job-title= job.title
+          .posted-date= new Date(job.created_at).toLocaleDateString()
+    .clearfix
+

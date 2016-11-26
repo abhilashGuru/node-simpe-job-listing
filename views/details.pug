@@ -1,0 +1,13 @@
+extends master.pug
+
+block content
+  h1= job.title
+  .back-to-listing
+    a(href="/") <<< Back to job listing
+  .job-info
+    .posted-date= new Date(job.created_at).toLocaleDateString()
+    .company_name= job.company_name
+    .apply-link
+      a(href=job.apply_link) Apply to this job
+    hr
+    .description= job.description
